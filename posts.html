@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Epson</title>
+</head>
+<body class="bg-green-50">
+    <header class="bg-black">
+        <div class="mx-4 md:mx-40 flex flex-col md:flex-row justify-between items-center">
+            <div class="w-full md:w-auto flex justify-between items-center p-4">
+                <img class="w-32 md:w-auto" src="images/logo.png" alt="Logo">
+                <button class="md:hidden text-white" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <nav id="mobile-menu" class="hidden md:block w-full md:w-auto">
+                <ul class="flex flex-col md:flex-row text-white font-bold text-sm">
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 hover:bg-slate-200 px-5 hover:text-black" href="index.html">HOME</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="biodata.html">BIODATA</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="contact_us.html">CONTACT US</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="posts.html">ADDITIONAL</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="freepage.html">FREE CONTENT</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            }
+        </script>
+    </header>
+
+    <main class="bg-gray-100 flex justify-center  items-center py-40 pb-60 md:py-20 px-4">
+        <div id="post-container" class="w-full max-w-md">
+            <div id="post-card" class="bg-white shadow-lg rounded-lg p-4 py-10 md:p-20 space-y-4">
+                <div id="loading" class="text-center text-gray-500">Loading post...</div>
+                <div id="error" class="text-center text-red-500 hidden"></div>
+                <div id="post-details" class="hidden">
+                    <div class="mb-2 md:mb-4">
+                        <span class="font-bold text-gray-700 text-sm md:text-base">Post ID:</span>
+                        <span id="post-id" class="text-blue-600 text-sm md:text-base"></span>
+                    </div>
+                    <h2 id="post-title" class="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-4"></h2>
+                    <p id="post-body" class="text-gray-700 leading-relaxed text-sm md:text-base"></p>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const loadingElement = document.getElementById('loading');
+                const errorElement = document.getElementById('error');
+                const postDetailsElement = document.getElementById('post-details');
+                const postIdElement = document.getElementById('post-id');
+                const postTitleElement = document.getElementById('post-title');
+                const postBodyElement = document.getElementById('post-body');
+    
+                fetch('https://jsonplaceholder.typicode.com/posts/45')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(post => {
+                        // Hide loading, show post details
+                        loadingElement.classList.add('hidden');
+                        postDetailsElement.classList.remove('hidden');
+    
+                        // Populate post details
+                        postIdElement.textContent = post.id;
+                        postTitleElement.textContent = post.title;
+                        postBodyElement.textContent = post.body;
+                    })
+                    .catch(error => {
+                        // Hide loading, show error
+                        loadingElement.classList.add('hidden');
+                        errorElement.textContent = `Error: ${error.message}`;
+                        errorElement.classList.remove('hidden');
+                    });
+            });
+        </script>
+    </main>
+
+    <footer class="bg-gray-950 py-5 pb-8">
+        <div class="flex flex-col md:flex-row font-bold text-sm justify-between mx-4 md:mx-40">
+            <div class="text-white text-center md:text-left mb-4 md:mb-0">
+                <p class="px-5">© Seiko Epson Corp. 2024</p>
+            </div>
+            <div>
+                <ul class="flex flex-col md:flex-row text-white font-bold text-sm text-center md:text-left">
+                    <li class="mb-2 md:mb-0"><a class="md:px-3 hover:underline" href="https://unai.edu/" target="_blank">UNAI WEB</a></li><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    <li class="mb-2 md:mb-0"><a class="md:px-3 hover:underline" href="https://fti.unai.edu/" target="_blank">FTI UNAI</a></li><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    <li class="mb-2 md:mb-0"><a class="md:px-3 hover:underline" href="#">Terms of Use</a></li><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    <li><a class=" md:px-3 hover:underline" href="#">About This Site</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
