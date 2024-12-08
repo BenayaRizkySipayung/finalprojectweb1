@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Epson</title>
+</head>
+<body>
+    <header class="bg-black">
+        <div class="mx-4 md:mx-40 flex flex-col md:flex-row justify-between items-center">
+            <div class="w-full md:w-auto flex justify-between items-center p-4">
+                <img class="w-32 md:w-auto" src="images/logo.png" alt="Logo">
+                <button class="md:hidden text-white" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <nav id="mobile-menu" class="hidden md:block w-full md:w-auto">
+                <ul class="flex flex-col md:flex-row text-white font-bold text-sm">
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 hover:bg-slate-200 px-5 hover:text-black" href="index.html">HOME</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="biodata.html">BIODATA</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="contact_us.html">CONTACT US</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="posts.html">ADDITIONAL</a><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    </li>
+                    <li class="w-full md:w-auto text-center md:flex md:flex-row">
+                        <a class="block md:inline-block py-4 md:py-10 px-5 hover:bg-slate-200 hover:text-black" href="freepage.html">FREE CONTENT</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            }
+        </script>
+    </header>
+
+    <main class="bg-gradient-to-b from-black from-10% to-blue-950 pb-10 md:pb-20">
+        <div class="relative">
+            <img src="images/banner.jpg" alt="Banner" class="w-full h-auto object-cover">
+            <div class="md:absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                <h1 class="text-2xl md:text-5xl text-white mb-4 md:mb-6">Welcome to Benaya Page</h1>
+                <h3 class="text-base md:text-2xl text-white mb-2 md:mb-4 transform translate-y-[-50%]">Expole my Web I Final Project!</h3>
+                <div class="flex flex-col md:flex-row gap-3 md:gap-5 text-sm md:text-xl text-white">
+                    <a href="#" class="hover:underline flex items-center justify-center">
+                        POINT OF SALES<i class="fa-solid fa-caret-right text-sm ml-3"></i>
+                    </a>
+                    <a href="#" class="hover:underline flex items-center justify-center">
+                        MICRODEVICES<i class="fa-solid fa-caret-right text-sm ml-3"></i>
+                    </a>
+                    <a href="#" class="hover:underline flex items-center justify-center">
+                        PRODUCTION SYSTEMS<i class="fa-solid fa-caret-right text-sm ml-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="my-6 md:my-10 pb-6 md:pb-10 px-4">
+            <h1 class="text-xl md:text-5xl text-center text-white leading-tight">
+                Or visit our printers and imaging products <br class="hidden md:block"> 
+                by selecting a region from the list below:
+            </h1>
+        </div>
+    
+        <div class="px-4 md:mx-40">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px">
+                <div class="bg-white p-6 md:p-10 md:pb-20">
+                    <h1 class="text-xl md:text-3xl mb-4">North America</h1>
+                    <ul class="list-disc-gray text-sm text-blue-900">
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">USA</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Canada</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Mexico</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Caribbean</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Puerto Rico</a></li>
+                    </ul>                      
+                </div>
+    
+                <div class="bg-white p-6 md:p-10 md:pb-20">
+                    <h1 class="text-xl md:text-3xl mb-4">Latin America</h1>
+                    <ul class="list-disc-gray text-sm text-blue-900">
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Argentina</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Bolivia</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Brazil</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Caribbean</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Central America</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Chile</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Colombia</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Dominican Republic</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Ecuador</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Mexico</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Paraguay</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Peru</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Uruguay</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Venezuela</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Other Countries</a></li>
+                    </ul>
+                </div>
+    
+                <div class="bg-white p-6 md:p-10 md:pb-20">
+                    <h1 class="text-xl md:text-3xl mb-4">Europe</h1>
+                    <ul class="list-disc-gray text-sm text-blue-900">
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Austria</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Belgium</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Czech Republic</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Denmark</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Finland</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">France</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Germany</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Ireland</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Italy</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Netherlands</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Norway</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Portugal</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Poland</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Spain</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Sweden</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Switzerland</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">United Kingdom</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Other European Countries</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px mt-px">
+                <div class="bg-white p-6 md:p-10 md:pb-20">
+                    <h1 class="text-xl md:text-3xl mb-4">Middle East & Africa</h1>
+                    <ul class="list-disc-gray text-sm text-blue-900">
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Africa (English)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Africa (French)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Caucasus (English)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Caucasus (Russian)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Central Asia (English)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Central Asia (Russian)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Israel</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Kazakhstan (Kazakh)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Kazakhstan (Russian)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Kenya</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Middle East (Arabic)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Middle East (English)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Moldova (Romanian)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Moldova (Russian)</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Nigeria</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">South Africa</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Türkiye</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Ukraine</a></li>
+                    </ul>
+                </div>
+    
+                <div class="bg-white p-6 md:p-10 md:pb-20">
+                    <h1 class="text-xl md:text-3xl mb-4">Asia</h1>
+                    <ul class="list-disc-gray text-sm text-blue-900">
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">China</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Hong Kong</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">India</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Indonesia</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Japan</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Korea</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Malaysia</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Myanmar</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Philippines</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Singapore</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Taiwan</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Thailand</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Vietnam</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Other Asian Websites</a></li>
+                    </ul> 
+                </div>
+    
+                <div class="bg-white p-6 md:p-10 md:pb-20">
+                    <h1 class="text-xl md:text-3xl mb-4">Oceania</h1>
+                    <ul class="list-disc-gray text-sm text-blue-900">
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">Australia</a></li>
+                        <li><span class="mr-2 text-gray-300">•</span><a href="#" class="hover:underline">New Zealand    </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-950 py-5 pb-8">
+        <div class="flex flex-col md:flex-row font-bold text-sm justify-between mx-4 md:mx-40">
+            <div class="text-white text-center md:text-left mb-4 md:mb-0">
+                <p class="px-5">© Seiko Epson Corp. 2024</p>
+            </div>
+            <div>
+                <ul class="flex flex-col md:flex-row text-white font-bold text-sm text-center md:text-left">
+                    <li class="mb-2 md:mb-0"><a class="md:px-3 hover:underline" href="https://unai.edu/" target="_blank">UNAI WEB</a></li><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    <li class="mb-2 md:mb-0"><a class="md:px-3 hover:underline" href="https://fti.unai.edu/" target="_blank">FTI UNAI</a></li><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    <li class="mb-2 md:mb-0"><a class="md:px-3 hover:underline" href="#">Terms of Use</a></li><span class="hidden md:block md:font-light md:text-gray-500 md:place-content-center">|</span>
+                    <li><a class=" md:px-3 hover:underline" href="#">About This Site</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
